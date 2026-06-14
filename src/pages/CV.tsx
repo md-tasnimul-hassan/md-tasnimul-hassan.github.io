@@ -103,8 +103,8 @@ export function CV() {
               <p className="text-muted text-base sm:text-lg mt-2">BUET, Dhaka, Bangladesh</p>
               
               <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 mt-5 text-base font-medium text-fg/80">
-                <a href="https://www.sites.google.com/view/md-tasnimul-hassan" target="_blank" rel="noopener noreferrer" className="hover:text-fg transition-colors flex items-center gap-1.5">
-                  <Globe size={16} /> <span className="underline underline-offset-2">sites.google.com/md-tasnimul-hassan</span>
+                <a href="https://md-tasnimul-hassan.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-fg transition-colors flex items-center gap-1.5">
+                  <Globe size={16} /> <span className="underline underline-offset-2">md-tasnimul-hassan.github.io</span>
                 </a>
                 <a href="mailto:tasnimul.eee@gmail.com" className="hover:text-fg transition-colors flex items-center gap-1.5">
                   <Mail size={16} /> <span className="underline underline-offset-2">tasnimul.eee@gmail.com</span>
