@@ -4,7 +4,7 @@
   "items": [
     {
       "id": 1,
-      "title": "Supervised Machine Learning: Regression and Classification",
+      "title": "Supervised Machine Learning",
       "issuer": "DeepLearning.AI",
       "date": "November 2025",
       "url": "https://www.coursera.org/account/accomplishments/certificate/A4K19KR29CIL",
@@ -17,6 +17,38 @@
       "date": "October 2025",
       "url": "https://certificates.cs50.io/0faea6cd-c4df-4079-b9e2-f290c4ee8916.pdf?size=letter",
       "image": "/certificates/cs50_python.png"
+    },
+    {
+      "id": 3,
+      "title": "Intro to Machine Learning",
+      "issuer": "Kaggle",
+      "date": "June 2026",
+      "url": "https://www.kaggle.com/learn/certification/mdtasnimulhassan7/intro-to-machine-learning",
+      "image": "/certificates/ml_kaggle.png"
+    },
+    {
+      "id": 4,
+      "title": "Machine Learning for Beginners",
+      "issuer": "Sololearn",
+      "date": "November 2025",
+      "url": "https://www.sololearn.com/en/certificates/CC-S0TTBV72",
+      "image": "/certificates/ml_sololearn.png"
+    },
+    {
+      "id": 5,
+      "title": "Pandas",
+      "issuer": "Kaggle",
+      "date": "May 2026",
+      "url": "https://www.kaggle.com/learn/certification/mdtasnimulhassan7/pandas",
+      "image": "/certificates/pandas_kaggle.png"
+    },
+    {
+      "id": 6,
+      "title": "EF SET English Certification (C2 Proficient)",
+      "issuer": "EF SET",
+      "date": "May 2026",
+      "url": "https://cert.efset.org/en/m491kZ",
+      "image": "/certificates/efset_english.png"
     }
   ]
 }
