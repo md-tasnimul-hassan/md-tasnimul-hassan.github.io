@@ -5,28 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Md. Tasnimul Hassan</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafrex/spa-github-pages
-      // This script checks to see if a redirect is present in the query string,
-      // converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
+
+    <!-- Primary Meta Tags -->
+    <title>Md. Tasnimul Hassan | EEE Student at BUET | AI Enthusiast</title>
+    <meta
+      name="title"
+      content="Md. Tasnimul Hassan | EEE Student at BUET | AI Enthusiast"
+    />
+    <meta
+      name="description"
+      content="Personal website of Md. Tasnimul Hassan, an Electrical and Electronic Engineering (EEE) sophomore at Bangladesh University of Engineering and Technology (BUET) passionate about AI and Machine Learning."
+    />
+    <meta
+      name="keywords"
+      content="Md. Tasnimul Hassan, BUET, EEE, Artificial Intelligence, Machine Learning, Portfolio, Bangladesh University of Engineering and Technology"
+    />
+    <meta name="author" content="Md. Tasnimul Hassan" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://md-tasnimul-hassan.github.io/" />
+    <meta property="og:title" content="Md. Tasnimul Hassan" />
+    <meta
+      property="og:description"
+      content="Personal website of Md. Tasnimul Hassan, an Electrical and Electronic Engineering (EEE) sophomore at Bangladesh University of Engineering and Technology (BUET) passionate about AI and Machine Learning."
+    />
+    <meta property="og:image" content="/hero.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://md-tasnimul-hassan.github.io/" />
+    <meta property="twitter:title" content="Md. Tasnimul Hassan" />
+    <meta
+      property="twitter:description"
+      content="Personal website of Md. Tasnimul Hassan, an Electrical and Electronic Engineering (EEE) sophomore at Bangladesh University of Engineering and Technology (BUET) passionate about AI and Machine Learning."
+    />
+    <meta property="twitter:image" content="/hero.jpg" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Md. Tasnimul Hassan",
+        "jobTitle": "Student",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Bangladesh University of Engineering and Technology (BUET)"
+        },
+        "url": "https://md-tasnimul-hassan.github.io/",
+        "sameAs": [
+          "https://github.com/md-tasnimul-hassan",
+          "https://www.linkedin.com/in/md-tasnimul-hassan",
+          "https://orcid.org/0009-0008-4319-4729",
+          "https://www.youtube.com/@md.tasnimul.hassan"
+        ],
+        "alumniOf": "Bangladesh University of Engineering and Technology"
+      }
     </script>
   </head>
   <body>
@@ -34,4 +70,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

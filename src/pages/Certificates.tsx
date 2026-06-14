@@ -1,8 +1,11 @@
 import { m } from "motion/react";
 import { ExternalLink } from "lucide-react";
 import data from "../data/certificates.json";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export function Certificates() {
+  usePageTitle("Certificates");
+
   const container = {
     hidden: {},
     show: { transition: { staggerChildren: 0.05 } }

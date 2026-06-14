@@ -1,6 +1,7 @@
 import { m } from "motion/react";
 import { Award, Calendar, ExternalLink, Leaf, Globe, Flag, Lightbulb, ScrollText, Users, Tag } from "lucide-react";
 import data from "../data/extracurricular.json";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function getIconForTag(tagName: string) {
   const lower = tagName.toLowerCase();
@@ -14,6 +15,8 @@ function getIconForTag(tagName: string) {
 }
 
 export function ExtraCurricular() {
+  usePageTitle("Extra-Curricular");
+
   const container = {
     hidden: {},
     show: { transition: { staggerChildren: 0.05 } }

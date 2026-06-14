@@ -1,8 +1,11 @@
 import { m } from "motion/react";
 import { FolderGit2, Code2, ExternalLink, Github } from "lucide-react";
 import projectsData from "../data/projects.json";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export function Projects() {
+  usePageTitle("Projects - Machine Learning & Tech");
+
   const container = {
     hidden: {},
     show: { transition: { staggerChildren: 0.05 } }

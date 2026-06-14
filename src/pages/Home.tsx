@@ -1,7 +1,10 @@
 import { m } from "motion/react";
 import homeData from "../data/home.json";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export function Home() {
+  usePageTitle("Home - EEE Student at BUET | AI Enthusiast");
+
   const container = {
     hidden: {},
     show: { transition: { staggerChildren: 0.05 } }

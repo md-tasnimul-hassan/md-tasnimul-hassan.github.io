@@ -30,7 +30,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-bg/80 border-b border-border-subtle transition-colors duration-300">
+    <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-bg-nav/80 border-b border-border-subtle transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
@@ -96,7 +96,7 @@ export function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="md:hidden bg-bg border-b border-border-subtle shadow-md"
+          className="md:hidden bg-bg-nav border-b border-border-subtle shadow-md"
         >
           <div className="px-4 pt-2 pb-4 space-y-1">
             {navData.items.map((item) => (

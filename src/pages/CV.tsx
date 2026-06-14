@@ -2,6 +2,7 @@ import React from "react";
 import { m } from "motion/react";
 import { Download, Globe, Mail, Linkedin, Github, ExternalLink } from "lucide-react";
 import cvData from "../data/cv.json";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section className="mb-10">
@@ -52,6 +53,8 @@ const ExperienceItem = ({
 );
 
 export function CV() {
+  usePageTitle("Curriculum Vitae");
+
   const container = {
     hidden: {},
     show: { transition: { staggerChildren: 0.05 } }
@@ -73,7 +76,7 @@ export function CV() {
       
       <div className="w-full max-w-4xl flex flex-col pb-24">
         
-        <div className="w-full flex justify-between items-center mb-6 pt-4">
+        <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pt-4">
           <p className="text-muted font-medium italic text-sm sm:text-base">
             "Drop an email for an updated CV"
           </p>
@@ -81,7 +84,7 @@ export function CV() {
             href={cvData.downloadLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 bg-fg text-bg hover:opacity-90 transition-opacity px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg font-bold shadow-md text-xs sm:text-sm"
+            className="flex items-center space-x-2 bg-fg text-bg hover:opacity-90 transition-opacity px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg font-bold shadow-md text-sm shrink-0"
           >
             <Download size={20} />
             <span>Download CV</span>

@@ -6,6 +6,7 @@
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
   --color-bg: var(--bg);
+  --color-bg-nav: var(--bg-nav);
   --color-bg-footer: var(--bg-footer);
   --color-fg: var(--text);
   --color-muted: var(--muted);
@@ -15,6 +16,7 @@
 
 :root {
   --bg: #f8f9fa;
+  --bg-nav: #ffffff;
   --bg-footer: #f0f2f5;
   --text: #0a0a0a;
   --muted: #555555;
@@ -23,11 +25,12 @@
 }
 
 .dark {
-  --bg: #050505;
-  --bg-footer: #000000;
+  --bg: #09090b;
+  --bg-nav: #18181b;
+  --bg-footer: #121214;
   --text: #fdfdfd;
-  --muted: #a3a3a3;
-  --border: #262626;
+  --muted: #a1a1aa;
+  --border: #27272a;
   --accent: #ffffff;
 }
 
