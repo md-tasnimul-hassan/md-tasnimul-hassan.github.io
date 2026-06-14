@@ -1,0 +1,36 @@
+{
+  "activities": [
+    {
+      "id": "aspire-2026",
+      "role": "Delegate",
+      "organization": "Aspire Leaders Program",
+      "issuer": "Aspire Institute",
+      "date": "April 2026",
+      "description": "Successfully completed all modules and 40 hours of coursework in the Aspire Leaders Program. Demonstrated increased self-confidence, enhanced critical thinking, strengthened communication skills, and a deepened commitment to making a positive social impact among a global community.",
+      "tags": [
+        "Leadership",
+        "Critical Thinking",
+        "Social Impact",
+        "Global Community"
+      ],
+      "certificateImage": "certificates/aspireLeaders.png",
+      "certificateLink": "https://drive.google.com/file/d/17hlqdKYoFy01O3UtjEkldYZenZtO7XLr/view"
+    },
+    {
+      "id": "waste-hero-2022",
+      "role": "Waste Hero Ambassador",
+      "organization": "Waste Hero Alliance",
+      "issuer": "Stockholm Environment Institute, Yunus Thailand, Indorama",
+      "date": "August 2022",
+      "description": "Served as a youth Waste Hero Ambassador and successfully completed the Design for Policy Bootcamp series, working to promote sustainable environmental policies.",
+      "tags": [
+        "Sustainability",
+        "Policy Design",
+        "Youth Ambassador",
+        "Environment"
+      ],
+      "certificateImage": "certificates/wasteHero.png",
+      "certificateLink": "https://drive.google.com/file/d/1FACuI3KeWIrxAQlo032LGtq0S70JH0TE/view"
+    }
+  ]
+}

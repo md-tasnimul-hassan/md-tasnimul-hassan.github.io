@@ -1,0 +1,36 @@
+{
+  "title": "Projects ",
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "Voice Biometrics Authentication System",
+      "category": "Bioinformatics",
+      "date": "April 2026",
+      "description": "A MATLAB-based voice biometric system. Implements DSP preprocessing, MFCC feature extraction, and K-Means Vector Quantization with a custom GUI.",
+      "technologies": ["MATLAB", "GUI", "Machine Learning", "DSP", "MFCC"],
+      "github": "https://github.com/md-tasnimul-hassan/Voice-Authentication",
+      "image": "project_cover/voice_biometric_cover.png"
+    },
+    {
+      "id": "project-2",
+      "title": "BUET Dining Fee Notifier",
+      "category": "Web Automation",
+      "date": "February 2026",
+      "description": "Built a production-grade automation bot that daily monitors dining fee balances for opted-in BUET students and sends instant email alerts when a due is detected. Written in Python, engineered with web automation, Gmail SMTP for styled HTML email delivery, deployed entirely on GitHub Actions with cron scheduling, with error feedback and secure secret management. ",
+      "technologies": ["Python", "Github Action", "Git", "Playwright", "SMTP"],
+      "github": "https://github.com/md-tasnimul-hassan/buet-fee-public",
+      "image": "project_cover/dining_fee_cover.jpg"
+    },
+    {
+      "id": "project-3",
+      "title": "GAMEZONE - Gamify with Python",
+      "category": "Game Development",
+      "date": "December 2025",
+      "description": "GameZone is an interactive, terminal-based gaming platform developed as the final project for Harvard's CS50x Introduction to Programming with Python (CS50P). It unifies three classic games under a single interface featuring robust user authentication and persistent statistical tracking.While the games themselves are classic, the engineering challenge lay in creating a cohesive system that handles user data securely, manages program flow across different modules, and implements complex game logic—most notably, an unbeatable AI for Tic-Tac-Toe using the Minimax algorithm.",
+      "technologies": ["Python", "Algorithm", "Statistics"],
+      "github": "https://github.com/md-tasnimul-hassan/cs50P_Final_Project",
+      "link": "https://www.youtube.com/watch?v=IZBLl2UqfM0&t",
+      "image": "project_cover/gamezone_cover.jpg"
+    }
+  ]
+}

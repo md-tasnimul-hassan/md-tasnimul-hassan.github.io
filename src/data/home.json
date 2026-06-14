@@ -1,0 +1,75 @@
+{
+  "name": "Md. Tasnimul Hassan",
+  "title": "EEE Sophomore | AI/ML Enthusiast",
+  "intro": [
+    "Hello, I am Md. Tasnimul Hassan. An undergraduate student in Electrical and Electronic Engineering at Bangladesh University of Engineering and Technology (BUET) .",
+    "I have a strong passion for AI and Machine Learning. Currently learning ML and doing hands on projects.",
+    "Beyond technology, I enjoy reading books or taking walks ."
+  ],
+  "focus": "Machine Learning",
+  "heroImage": "hero.jpg",
+  "news": [
+    {
+      "date": "April 2026",
+      "content": "Completed Aspire Leadership Program funded by Harvard Business School."
+    },
+    {
+      "date": "November 2025",
+      "content": "Completed CS50 python and Supervised Learning course by Andrew Ng .",
+      "link": "https://github.com/md-tasnimul-hassan/cs50P_Final_Project",
+      "linkText": "🔗My cs50 project"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Bangladesh University of Engineering and Technology",
+      "degree": "BSc in Electrical and Electronic Engineering",
+      "period": "2024 - Present",
+      "location": "Dhaka, Bangladesh",
+      "details": "Level : 2 • Term : 1",
+      "url": "https://www.buet.ac.bd"
+    },
+    {
+      "institution": "Rangpur Government College",
+      "degree": "Higher Secondary School Certificate in Science",
+      "period": "2021 - 2023",
+      "location": "Rangpur, Bangladesh",
+      "details": "GPA : 5.00 / 5.00",
+      "url": "https://rangpur.college.gov.bd/"
+    },
+    {
+      "institution": "Rangpur Zilla School",
+      "degree": "Secondary School Certificate in Science and Junior School Certificate",
+      "period": "2017 - 2020",
+      "location": "Rangpur, Bangladesh",
+      "details": "GPA : 5.00 / 5.00",
+      "url": "http://www.rangpurzillaschool.edu.bd/"
+    },
+    {
+      "institution": "Government Muslim High School",
+      "degree": "Primary School Certificate",
+      "period": "2015 - 2016",
+      "location": "Chattogram, Bangladesh",
+      "details": "GPA : 5.00 / 5.00",
+      "url": "https://gmhsctg.tsmts.com/"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": ["C", "C++", "Python", "MATLAB"]
+    },
+    {
+      "category": "Simulation & Design",
+      "items": ["PSpice", "AutoCAD", "TinkerCAD", "Altium Designer"]
+    },
+    {
+      "category": "Hardware / Embedded",
+      "items": ["Arduino", "Oscilloscopes", "Function Generators"]
+    },
+    {
+      "category": "General Tools",
+      "items": ["VS Code", "LaTeX", "Git/GitHub", "Microsoft Office"]
+    }
+  ]
+}
