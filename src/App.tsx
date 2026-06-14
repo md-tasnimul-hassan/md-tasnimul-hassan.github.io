@@ -40,7 +40,7 @@ export default function App() {
         <Router basename={import.meta.env.BASE_URL}>
           <div className="min-h-screen relative selection:bg-fg selection:text-bg flex flex-col">
             <Navbar />
-            <main className="max-w-5xl mx-auto w-full flex-grow">
+            <main className="w-full flex-grow">
               <AppRoutes />
             </main>
             <Footer />
