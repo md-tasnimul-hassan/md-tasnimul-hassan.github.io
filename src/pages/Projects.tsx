@@ -69,7 +69,7 @@ export function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center sm:w-auto w-full px-6 py-2.5 gap-2 rounded-xl bg-bg border border-border-subtle hover:border-fg/40 hover:bg-fg/5 text-fg font-medium transition-all"
+                        className="flex items-center justify-center sm:w-auto w-full px-6 py-2.5 gap-2 rounded-xl bg-fg text-bg hover:opacity-90 font-medium transition-opacity"
                       >
                         <Github size={18} /> Source
                       </a>
