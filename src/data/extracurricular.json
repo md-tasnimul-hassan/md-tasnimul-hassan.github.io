@@ -13,7 +13,7 @@
         "Social Impact",
         "Global Community"
       ],
-      "certificateImage": "certificates/aspireLeaders.png",
+      "certificateImage": "/certificates/aspireLeaders.png",
       "certificateLink": "https://drive.google.com/file/d/17hlqdKYoFy01O3UtjEkldYZenZtO7XLr/view"
     },
     {
@@ -29,7 +29,7 @@
         "Youth Ambassador",
         "Environment"
       ],
-      "certificateImage": "certificates/wasteHero.png",
+      "certificateImage": "/certificates/wasteHero.png",
       "certificateLink": "https://drive.google.com/file/d/1FACuI3KeWIrxAQlo032LGtq0S70JH0TE/view"
     }
   ]

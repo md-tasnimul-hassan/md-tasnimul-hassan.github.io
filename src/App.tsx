@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -25,7 +25,9 @@ function AppRoutes() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/cv" element={<CV />} />
         <Route path="/certificate" element={<Certificates />} />
+        <Route path="/certificates" element={<Navigate to="/certificate" replace />} />
         <Route path="/extra-curricular" element={<ExtraCurricular />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>
   );

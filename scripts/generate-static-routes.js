@@ -17,6 +17,7 @@ async function copyIndexHtml() {
     'cv',
     'projects',
     'certificate',
+    'certificates',
     'extra-curricular'
   ];
 

@@ -8,7 +8,7 @@
       "issuer": "DeepLearning.AI",
       "date": "November 2025",
       "url": "https://www.coursera.org/account/accomplishments/certificate/A4K19KR29CIL",
-      "image": "certificates/coursera_ml.png"
+      "image": "/certificates/coursera_ml.png"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "issuer": "Harvard University (CS50)",
       "date": "October 2025",
       "url": "https://certificates.cs50.io/0faea6cd-c4df-4079-b9e2-f290c4ee8916.pdf?size=letter",
-      "image": "certificates/cs50_python.png"
+      "image": "/certificates/cs50_python.png"
     }
   ]
 }
