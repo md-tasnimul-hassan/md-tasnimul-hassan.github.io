@@ -60,19 +60,19 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center space-x-2">
-              <span className="text-sm font-medium text-fg/80">Mail to: </span>
+              <span className="text-base font-medium text-fg/80">Mail to: </span>
               {/* Spans visually concatenated to avoid regex scraping from DOM */}
-              <span className="text-sm font-mono text-muted tracking-tight">tasnimul.eee<span>@</span>gmail.com</span>
+              <span className="text-base font-mono text-muted tracking-tight">tasnimul.eee<span>@</span>gmail.com</span>
               <button 
                 onClick={handleCopyEmail}
-                className="ml-2 p-1.5 rounded-md bg-fg/5 hover:bg-fg/10 text-muted hover:text-fg transition-colors"
+                className="ml-2 p-2 rounded-md bg-fg/5 hover:bg-fg/10 text-muted hover:text-fg transition-colors"
                 title="Copy email address"
                 aria-label="Copy email address"
               >
-                {isCopied ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
+                {isCopied ? <Check size={18} className="text-green-500" /> : <Copy size={18} />}
               </button>
             </div>
-            <span className="text-xs text-muted/80 mt-2">
+            <span className="text-sm text-muted/80 mt-2">
               &copy; {currentYear} All rights reserved.
             </span>
           </div>
