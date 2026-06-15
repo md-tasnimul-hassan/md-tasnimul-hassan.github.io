@@ -44,7 +44,7 @@ export function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 xl:gap-32 items-center">
           
           {/* Left Side: Hero Image (Bigger) */}
-          <div  className="relative w-full flex justify-center order-last md:order-first">
+          <div  className="relative w-full flex justify-center">
             <div className="relative w-64 h-80 sm:w-80 sm:h-[28rem] md:w-full md:max-w-md lg:h-[32rem]">
               <img 
                 src={homeData.heroImage} 

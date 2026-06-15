@@ -37,9 +37,9 @@ export function Projects() {
               key={project.id || index}
               className="group flex flex-col md:flex-row bg-bg border border-border-subtle rounded-3xl overflow-hidden hover:border-fg/30 transition-all duration-300 shadow-sm hover:shadow-md"
             >
-              <div className="flex flex-col w-full md:w-5/12 shrink-0 border-b md:border-b-0 md:border-r border-border-subtle bg-fg/5">
+              <div className="contents md:flex md:flex-col md:w-5/12 md:shrink-0 md:border-r md:border-border-subtle md:bg-fg/5">
                 {project.image && (
-                  <div className="p-6 pb-0 md:p-10 md:pb-0">
+                  <div className="order-1 md:order-none p-6 pb-0 md:p-10 md:pb-0 bg-fg/5 md:bg-transparent border-b border-border-subtle md:border-none">
                     <div className="w-full aspect-video rounded-xl overflow-hidden shadow-sm">
                       <img
                         src={project.image}
@@ -50,12 +50,12 @@ export function Projects() {
                   </div>
                 )}
                 
-                <div className="flex flex-col gap-6 p-6 md:p-10 mt-auto">
+                <div className="order-3 md:order-none flex flex-col gap-6 p-6 md:p-10 mt-auto md:border-t-0 border-t border-border-subtle bg-bg md:bg-transparent">
                   <div className="flex flex-wrap gap-2.5">
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium rounded-lg bg-bg text-fg/90 border border-border-subtle"
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium rounded-lg bg-bg md:bg-transparent text-fg/90 border border-border-subtle"
                       >
                         <Code2 size={14} className="text-muted" />
                         {tech}
@@ -88,7 +88,7 @@ export function Projects() {
                 </div>
               </div>
               
-              <div className="flex flex-col flex-grow p-6 sm:p-8 md:p-10">
+              <div className="order-2 md:order-none flex flex-col flex-grow p-6 sm:p-8 md:p-10">
                 <div className="flex justify-between items-start mb-4 gap-4">
                   <div>
                     <h3 className="text-2xl sm:text-3xl font-display font-bold text-fg mb-3 leading-tight">
