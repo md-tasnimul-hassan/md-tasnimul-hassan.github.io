@@ -61,7 +61,7 @@
     },
     {
       "category": "Simulation & Design",
-      "items": ["PSpice", "AutoCAD", "TinkerCAD", "Altium Designer"]
+      "items": ["PSpice", "AutoCAD", "TinkerCAD", "KiCad"]
     },
     {
       "category": "Hardware / Embedded",
