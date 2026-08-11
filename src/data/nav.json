@@ -2,6 +2,7 @@
   "items": [
     { "id": "home", "label": "Home", "path": "/" },
     { "id": "projects", "label": "Projects", "path": "/projects" },
+    { "id": "publications", "label": "Publications", "path": "/publications" },
     { "id": "cv", "label": "CV", "path": "/cv" },
     { "id": "certificate", "label": "Certificate", "path": "/certificate" },
     { "id": "extra-curricular", "label": "Extra-Curricular", "path": "/extra-curricular" }

@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import navData from "../data/nav.json";
 import homeData from "../data/home.json";
 import { useTheme } from "./ThemeProvider";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { m } from "motion/react";
 
 export function Navbar() {
@@ -12,6 +12,32 @@ export function Navbar() {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-20% 0px -60% 0px" }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, [location.pathname]);
 
   // Cycle through themes
   const toggleTheme = () => {
@@ -25,7 +51,7 @@ export function Navbar() {
     setIsRotating(true);
     setTimeout(() => {
       setIsRotating(false);
-      window.location.href = "/";
+      navigate("/");
     }, 150);
   };
 
@@ -45,7 +71,7 @@ export function Navbar() {
           
           <div className="hidden md:flex flex-grow justify-center space-x-8 relative">
             {navData.items.map((item) => {
-              const isActive = location.pathname === item.path;
+              const isActive = location.pathname === '/' ? activeSection === item.id : location.pathname === item.path;
               return (
                 <Link
                   key={item.id}
@@ -99,20 +125,23 @@ export function Navbar() {
           className="md:hidden bg-bg-nav border-b border-border-subtle shadow-md"
         >
           <div className="px-4 pt-2 pb-4 space-y-1">
-            {navData.items.map((item) => (
-              <Link
-                key={item.id}
-                to={item.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  location.pathname === item.path
-                    ? "bg-fg text-bg"
-                    : "text-muted hover:text-fg hover:bg-fg/5"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navData.items.map((item) => {
+              const isActive = location.pathname === '/' ? activeSection === item.id : location.pathname === item.path;
+              return (
+                <Link
+                  key={item.id}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive
+                      ? "bg-fg text-bg"
+                      : "text-muted hover:text-fg hover:bg-fg/5"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </m.div>
       )}

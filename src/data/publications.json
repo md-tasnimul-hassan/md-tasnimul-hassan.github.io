@@ -1,0 +1,13 @@
+{
+  "publications": [
+    {
+      "id": "pub-1",
+      "title": "A Feasibility Analysis of Piezoelectric Energy Harvesting in Bangladesh: Technical Challenges and Sustainability Prospect",
+      "authors": ["Md. Tasnimul Hassan", "Monem Tazuar Alvi", "Swapneel Paul", "Tanvir Ahmed, Kazi Tashad Tonoy", "Md. Soukhin Azad", "Kushal Roy Sondo"],
+      "_conference": "IEEE International Conference on Artificial Intelligence 2026",
+      "date": "June 2026",
+      "link": "https://doi.org/10.13140/RG.2.2.30307.72482",
+      "description": "This report presents a technical, economic, and environmental feasibility analysis of implementing piezoelectric energy harvesting systems in Bangladesh. Drawing on primary survey data from engineering undergraduates and secondary literature, the study evaluates the potential of harvesting kinetic energy from dense pedestrian and vehicular traffic in urban centers like Dhaka. Key findings indicate that while traffic volume is substantial, current piezoelectric materials (such as PZT) offer low, intermittent power outputs, making the technology suitable only for auxiliary, low-power indoor applications (e.g., ticket gates at Dhaka Metro Rail stations) rather than grid-level power. Severe monsoon flooding risks, maintenance capacity gaps, and flexible asphalt pavement mismatches present critical challenges to outdoor roadways. This technical report was conducted as part of the course HUM 272: Developing English Skills (Sessional) in the Department of Electrical and Electronic Engineering (EEE) at the Bangladesh University of Engineering and Technology (BUET)."
+    }
+  ]
+}

@@ -1,9 +1,37 @@
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { m } from "motion/react";
 import homeData from "../data/home.json";
 import { usePageTitle } from "../hooks/usePageTitle";
+import { Projects } from "./Projects";
+import { Publications } from "./Publications";
+import { CV } from "./CV";
 
 export function Home() {
-  usePageTitle("Home - EEE Student at BUET | AI Enthusiast");
+  usePageTitle("Md. Tasnimul Hassan");
+  const location = useLocation();
+
+  const [loadedLevel, setLoadedLevel] = useState(0);
+
+  useEffect(() => {
+    if (loadedLevel < 3) {
+      const timer = setTimeout(() => {
+        setLoadedLevel((prev) => prev + 1);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [loadedLevel]);
+
+  useEffect(() => {
+    if (loadedLevel === 3 && location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [loadedLevel, location.hash]);
 
   const container = {
     hidden: {},
@@ -22,16 +50,10 @@ export function Home() {
       exit={{ opacity: 0, transition: { duration: 0.2, ease: "easeIn" } }}
       className="w-full"
     >
-      <div className="flex flex-col items-center min-h-[calc(100vh-4rem)] p-6">
-      <div
-        className="w-full max-w-6xl flex flex-col pt-12 pb-24"
-        
-        
-        
-        
-      >
+      <section id="home" className="flex flex-col items-center min-h-[calc(100vh-4rem)] p-6">
+      <div className="w-full max-w-7xl flex flex-col pt-6 pb-12">
         {/* Top Section: Title & Intro */}
-        <div  className="text-center w-full mb-16 md:mb-24">
+        <div  className="text-center w-full mb-10 md:mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-fg tracking-tight mb-4">
             {homeData.name}
           </h1>
@@ -56,7 +78,7 @@ export function Home() {
 
           {/* Right Side: Description */}
           <div  className="flex flex-col space-y-8">
-            <div className="space-y-4 text-base md:text-lg text-fg/80 leading-relaxed text-left text-pretty max-w-prose mx-auto md:mx-0">
+            <div className="space-y-3 text-sm sm:text-base text-fg/80 leading-relaxed text-left text-pretty max-w-prose mx-auto md:mx-0">
               {homeData.intro.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -77,21 +99,21 @@ export function Home() {
         </div>
 
         {/* Full Width Section: News & Updates */}
-        <div className="mt-24 lg:mt-32 border-t border-border-subtle pt-16 w-full text-left">
-          <div  className="flex flex-col mb-20 md:mb-28">
-            <h2 className="text-2xl sm:text-3xl font-display font-bold text-fg mb-10">News and Updates 📢</h2>
+        <div className="mt-12 lg:mt-16 border-t border-border-subtle pt-10 w-full text-left">
+          <div  className="flex flex-col mb-10 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-fg mb-8">News and Updates 📢</h2>
             <m.div 
               variants={container}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-50px" }}
-              className="space-y-8"
+              className="space-y-4"
             >
               {homeData.news.map((itemValue, index) => (
                 <m.div key={index} variants={item} className="flex flex-col border-l-2 border-border-subtle pl-6 relative">
                   <span className="absolute w-3 h-3 bg-bg border-2 border-fg rounded-full -left-[7px] top-1"></span>
-                  <span className="text-sm font-mono font-medium text-muted mb-2">{itemValue.date}</span>
-                  <p className="text-lg text-fg/90 leading-relaxed max-w-3xl">
+                  <span className="text-xs sm:text-sm font-mono font-medium text-muted mb-1">{itemValue.date}</span>
+                  <p className="text-sm sm:text-base text-fg/90 leading-relaxed max-w-3xl">
                     {itemValue.content}
                     {itemValue.linkText && (
                       <a href={itemValue.link || "#"} target="_blank" rel="noopener noreferrer" className="ml-0 sm:ml-2 mt-2 sm:mt-0 inline-block font-medium text-sm border border-border-subtle bg-fg/5 px-2.5 py-1 rounded-md hover:bg-fg/10 transition-colors">
@@ -105,8 +127,44 @@ export function Home() {
           </div>
         </div>
 
+        {/* Full Width Section: Experience */}
+        {homeData.experience && homeData.experience.length > 0 && (
+          <div className="border-t border-border-subtle pt-10 w-full text-left">
+            <div className="flex flex-col mb-10 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl font-display font-bold text-fg mb-8">Experience</h2>
+              <m.div 
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-50px" }}
+                className="space-y-4"
+              >
+                {homeData.experience.map((exp, index) => (
+                  <m.div key={index} variants={item} className="flex flex-col border-l-2 border-border-subtle pl-6 relative">
+                    <span className="absolute w-3 h-3 bg-bg border-2 border-fg rounded-full -left-[7px] top-1.5"></span>
+                    <h3 className="text-lg font-bold text-fg mb-1">{exp.role}</h3>
+                    <p className="text-sm sm:text-base text-fg/90 font-medium mb-1">
+                      {exp.url ? (
+                        <a href={exp.url} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-fg/80 transition-colors">
+                          {exp.company}
+                        </a>
+                      ) : (
+                        exp.company
+                      )}
+                      {" "}
+                      <span className="font-mono text-xs sm:text-sm text-muted">({exp.period})</span>
+                    </p>
+                    <p className="text-xs sm:text-sm text-muted mb-1">{exp.location}</p>
+                    <p className="text-sm sm:text-base text-fg/80">{exp.description}</p>
+                  </m.div>
+                ))}
+              </m.div>
+            </div>
+          </div>
+        )}
+
         {/* Grid Section: Education & Skills Side by Side */}
-        <div className="mt-16 lg:mt-24 border-t border-border-subtle pt-16 grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 w-full">
+        <div className="mt-10 lg:mt-16 border-t border-border-subtle pt-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 w-full">
             
             {/* Left: Education (Timeline) */}
             <div  className="flex flex-col">
@@ -116,19 +174,19 @@ export function Home() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-50px" }}
-                className="space-y-10"
+                className="space-y-4"
               >
                 {homeData.education.map((edu, index) => (
                   <m.div key={index} variants={item} className="flex flex-col border-l-2 border-border-subtle pl-6 relative">
                     <span className="absolute w-3 h-3 bg-bg border-2 border-fg rounded-full -left-[7px] top-1.5"></span>
                     <a href={edu.url} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-fg/80 transition-all w-fit">
-                      <h3 className="text-xl font-bold text-fg mb-1">{edu.institution}</h3>
+                      <h3 className="text-lg font-bold text-fg mb-1">{edu.institution}</h3>
                     </a>
-                    <p className="text-base text-fg/90 font-medium mb-1">
-                      {edu.degree} <span className="font-mono text-sm text-muted">({edu.period})</span>
+                    <p className="text-sm sm:text-base text-fg/90 font-medium mb-1">
+                      {edu.degree} <span className="font-mono text-xs sm:text-sm text-muted">({edu.period})</span>
                     </p>
-                    <p className="text-sm text-muted mb-2">{edu.location}</p>
-                    <p className="text-sm font-semibold text-fg/80">{edu.details}</p>
+                    <p className="text-xs sm:text-sm text-muted mb-1">{edu.location}</p>
+                    <p className="text-xs sm:text-sm font-semibold text-fg/80">{edu.details}</p>
                   </m.div>
                 ))}
               </m.div>
@@ -142,11 +200,11 @@ export function Home() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-50px" }}
-                className="space-y-8"
+                className="space-y-6"
               >
                 {homeData.skills.map((skillGroup, index) => (
                   <m.div key={index} variants={item}>
-                    <p className="text-sm font-mono text-muted uppercase tracking-wider mb-3">
+                    <p className="text-xs font-mono text-muted uppercase tracking-wider mb-2">
                       {skillGroup.category}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -166,7 +224,26 @@ export function Home() {
 
           </div>
       </div>
-    </div>
+    </section>
+
+    <section id="projects" className="w-full border-t border-border-subtle bg-bg py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        {loadedLevel > 0 && <Projects isSection />}
+      </div>
+    </section>
+
+    <section id="publications" className="w-full border-t border-border-subtle bg-bg py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        {loadedLevel > 1 && <Publications isSection />}
+      </div>
+    </section>
+
+    <section id="cv" className="w-full border-t border-border-subtle bg-bg py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        {loadedLevel > 2 && <CV isSection />}
+      </div>
+    </section>
+    
     </m.div>
   );
 }

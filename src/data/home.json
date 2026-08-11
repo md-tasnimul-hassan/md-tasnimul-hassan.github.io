@@ -20,6 +20,16 @@
       "linkText": "🔗My cs50 project"
     }
   ],
+  "experience": [
+    {
+      "role": "Machine Learning Intern",
+      "company": "Tech AI Solutions",
+      "url": "https://example.com",
+      "period": "Summer 2025",
+      "location": "Dhaka, Bangladesh",
+      "description": "Worked on computer vision models for defect detection."
+    }
+  ],
   "education": [
     {
       "institution": "Bangladesh University of Engineering and Technology",

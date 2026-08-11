@@ -14,8 +14,8 @@ function getIconForTag(tagName: string) {
   return <Tag size={12} className="text-muted" />;
 }
 
-export function ExtraCurricular() {
-  usePageTitle("Extra-Curricular");
+export function ExtraCurricular({ isSection }: { isSection?: boolean }) {
+  usePageTitle(isSection ? null : "Extra-Curricular");
 
   const container = {
     hidden: {},
@@ -29,19 +29,20 @@ export function ExtraCurricular() {
 
   return (
     <m.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }}
-      exit={{ opacity: 0, transition: { duration: 0.2, ease: "easeIn" } }}
+      initial={isSection ? {} : { opacity: 0 }}
+      animate={isSection ? {} : { opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }}
+      exit={isSection ? {} : { opacity: 0, transition: { duration: 0.2, ease: "easeIn" } }}
       className="w-full"
     >
-      <div className="flex flex-col items-center min-h-[calc(100vh-4rem)] p-6">
+      <div className={`flex flex-col items-center ${isSection ? 'p-0' : 'min-h-[calc(100vh-4rem)] p-6'}`}>
       <div
         className="w-full max-w-5xl flex flex-col pt-12 pb-24"
-        
-        
-        
-        
       >
+        {isSection && (
+          <div className="text-center w-full mb-10">
+            <h2 className="text-4xl sm:text-5xl font-display font-extrabold text-fg tracking-tight">Extra-Curricular</h2>
+          </div>
+        )}
         <div className="grid grid-cols-1 gap-8 w-full">
           {data.activities.map((activity) => (
             <div

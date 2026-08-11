@@ -3,8 +3,8 @@ import { ExternalLink } from "lucide-react";
 import data from "../data/certificates.json";
 import { usePageTitle } from "../hooks/usePageTitle";
 
-export function Certificates() {
-  usePageTitle("Certificates");
+export function Certificates({ isSection }: { isSection?: boolean }) {
+  usePageTitle(isSection ? null : "Certificates");
 
   const container = {
     hidden: {},
@@ -18,15 +18,20 @@ export function Certificates() {
 
   return (
     <m.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }}
-      exit={{ opacity: 0, transition: { duration: 0.2, ease: "easeIn" } }}
+      initial={isSection ? {} : { opacity: 0 }}
+      animate={isSection ? {} : { opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }}
+      exit={isSection ? {} : { opacity: 0, transition: { duration: 0.2, ease: "easeIn" } }}
       className="w-full"
     >
-      <div className="flex flex-col w-full min-h-[calc(100vh-4rem)]">
+      <div className={`flex flex-col w-full ${isSection ? '' : 'min-h-[calc(100vh-4rem)]'}`}>
       <div
-        className="w-full flex flex-col pt-12 pb-24 px-8 sm:px-12 lg:px-16"
+        className={`w-full flex flex-col pt-12 pb-24 ${isSection ? 'px-0' : 'px-8 sm:px-12 lg:px-16'}`}
       >
+        {isSection && (
+          <div className="text-center w-full mb-10">
+            <h2 className="text-4xl sm:text-5xl font-display font-extrabold text-fg tracking-tight">Certificates</h2>
+          </div>
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-12 lg:gap-16">
           {data.items.map((cert) => (
             <div

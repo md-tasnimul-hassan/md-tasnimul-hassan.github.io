@@ -9,7 +9,8 @@
       "description": "A MATLAB-based voice biometric system. Implements DSP preprocessing, MFCC feature extraction, and K-Means Vector Quantization with a custom GUI.",
       "technologies": ["MATLAB", "GUI", "Machine Learning", "DSP", "MFCC"],
       "github": "https://github.com/md-tasnimul-hassan/Voice-Authentication",
-      "image": "/project_cover/voice_biometric_cover.png"
+      "image": "/project_cover/voice_biometric_cover.png",
+      "detailsLink": "/project_html/project-1.html"
     },
     {
       "id": "project-2",
