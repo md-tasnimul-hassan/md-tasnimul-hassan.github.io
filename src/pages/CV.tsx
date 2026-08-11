@@ -2,13 +2,27 @@ import React, { useMemo } from "react";
 import { m } from "motion/react";
 import { Download } from "lucide-react";
 import { usePageTitle } from "../hooks/usePageTitle";
+import cvData from "../data/cv.json";
+
+function getEmbedConfig(url: string) {
+  if (!url) return { isDrive: false, embedUrl: null };
+  const match = url.match(/\/file\/d\/([^\/]+)/);
+  if (match && match[1]) {
+    return {
+      isDrive: true,
+      embedUrl: `https://drive.google.com/file/d/${match[1]}/preview`
+    };
+  }
+  return { isDrive: false, embedUrl: null };
+}
 
 export function CV({ isSection }: { isSection?: boolean }) {
   usePageTitle(isSection ? null : "Curriculum Vitae");
 
-  const pdfFileName = "/resume.pdf";
-  // The Cache-Busting Trick for "One-Tap Updates"
-  const cacheBusterUrl = useMemo(() => `${pdfFileName}?v=${new Date().getTime()}`, []);
+  const pdfFileName = `${import.meta.env.BASE_URL}resume.pdf`;
+  const cacheBusterUrl = useMemo(() => `${pdfFileName}?v=${new Date().getTime()}`, [pdfFileName]);
+  const downloadUrl = cvData.downloadLink || pdfFileName;
+  const { isDrive, embedUrl } = useMemo(() => getEmbedConfig(cvData.downloadLink), []);
 
   return (
     <m.div
@@ -31,7 +45,7 @@ export function CV({ isSection }: { isSection?: boolean }) {
             "Drop an email for an updated CV"
           </p>
           <a
-            href={pdfFileName}
+            href={downloadUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 bg-fg text-bg hover:opacity-90 transition-opacity px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg font-bold shadow-md text-sm shrink-0"
@@ -42,20 +56,29 @@ export function CV({ isSection }: { isSection?: boolean }) {
         </div>
 
         <div className="w-full h-[85vh] min-h-[600px] border border-border-subtle rounded-xl overflow-hidden bg-[#525659] shadow-sm">
-          <object data={cacheBusterUrl} type="application/pdf" className="w-full h-full">
-            <div className="flex flex-col justify-center items-center h-full text-white font-sans text-center p-5">
-              <h2 className="text-2xl font-bold mb-2">View My Resume</h2>
-              <p className="mb-4">Your mobile browser doesn't support inline PDFs.</p>
-              <a 
-                href={pdfFileName}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-[#4CAF50] text-white text-base font-bold mt-4 px-6 py-3 rounded-lg hover:bg-[#45a049] transition-colors"
-              >
-                Tap here to open / download
-              </a>
-            </div>
-          </object>
+          {isDrive && embedUrl ? (
+            <iframe
+              src={embedUrl}
+              className="w-full h-full border-0"
+              title="CV Preview"
+              allow="autoplay"
+            />
+          ) : (
+            <object data={cacheBusterUrl} type="application/pdf" className="w-full h-full">
+              <div className="flex flex-col justify-center items-center h-full text-white font-sans text-center p-5">
+                <h2 className="text-2xl font-bold mb-2">View My Resume</h2>
+                <p className="mb-4">Your mobile browser doesn't support inline PDFs.</p>
+                <a 
+                  href={downloadUrl}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-[#4CAF50] text-white text-base font-bold mt-4 px-6 py-3 rounded-lg hover:bg-[#45a049] transition-colors"
+                >
+                  Tap here to open / download
+                </a>
+              </div>
+            </object>
+          )}
         </div>
       </div>
     </div>
